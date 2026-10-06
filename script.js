@@ -1266,4 +1266,39 @@ document.addEventListener("DOMContentLoaded", () => {
                         console.warn(
                             error
                         );
-   
+                    }
+
+
+                    window.location.reload();
+                }
+            }
+        }
+    );
+
+
+    /* =========================================================
+       INICIALIZACIÓN
+    ========================================================== */
+
+    loadEvaluationState();
+
+    loadProgress();
+
+    if (currentScreen > 1 && !evaluationState.team) {
+        currentScreen = 1;
+    }
+
+    showScreen(
+        currentScreen
+    );
+
+    /*
+        Si la página se abrió o recargó directamente en el cierre,
+        hacemos un envío forzado adicional. Es seguro porque el servidor
+        actualiza la fila del equipo en lugar de crear duplicados.
+    */
+    if (currentScreen === TOTAL_SCREENS) {
+        setTimeout(() => sendFinalSummary(true), 1200);
+    }
+
+});
