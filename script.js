@@ -151,16 +151,34 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    function sendFinalSummary() {
-        if (!evaluationState.team || evaluationState.summarySent) return;
-        evaluationState.summarySent = true;
-        saveEvaluationState();
-        sendRecord({
-            action:"complete", grupo:GROUP_NAME, equipo:evaluationState.team,
-            intentos:evaluationState.attempts, primerIntento:evaluationState.firstAttemptCorrect,
+    function sendFinalSummary(force = false) {
+        if (!evaluationState.team) return;
+        if (evaluationState.summarySent && !force) return;
+
+        const payload = {
+            action:"complete",
+            grupo:GROUP_NAME,
+            equipo:evaluationState.team,
+            intentos:evaluationState.attempts,
+            primerIntento:evaluationState.firstAttemptCorrect,
             totalErrores:evaluationState.totalErrors,
             erroresConceptuales:[...new Set(evaluationState.errorCodes)]
-        });
+        };
+
+        /*
+            Apps Script se consume con mode:"no-cors", por lo que el navegador
+            no puede confirmar la respuesta. Para evitar depender de F5,
+            enviamos el resumen al entrar al cierre y hacemos dos reintentos
+            automáticos. En la hoja no duplica equipos: Apps Script actualiza
+            la fila existente del mismo equipo.
+        */
+        sendRecord(payload);
+
+        setTimeout(() => sendRecord(payload), 900);
+        setTimeout(() => sendRecord(payload), 2500);
+
+        evaluationState.summarySent = true;
+        saveEvaluationState();
     }
 
 
@@ -706,6 +724,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         TOTAL_SCREENS
                     ) {
 
+                        /*
+                            Si estamos saliendo de la pantalla 17,
+                            enviamos el resumen ANTES de entrar al cierre.
+                        */
+                        if (currentScreen === 17) {
+                            sendFinalSummary(true);
+                        }
+
                         showScreen(
                             currentScreen + 1
                         );
@@ -1240,30 +1266,4 @@ document.addEventListener("DOMContentLoaded", () => {
                         console.warn(
                             error
                         );
-                    }
-
-
-                    window.location.reload();
-                }
-            }
-        }
-    );
-
-
-    /* =========================================================
-       INICIALIZACIÓN
-    ========================================================== */
-
-    loadEvaluationState();
-
-    loadProgress();
-
-    if (currentScreen > 1 && !evaluationState.team) {
-        currentScreen = 1;
-    }
-
-    showScreen(
-        currentScreen
-    );
-
-});
+   
