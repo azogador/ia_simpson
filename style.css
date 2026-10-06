@@ -1,0 +1,1702 @@
+/* ============================================================
+   VARIABLES
+============================================================ */
+
+:root {
+
+    --yellow: #ffd521;
+    --yellow-soft: #fff2a8;
+
+    --blue: #2b7de9;
+    --blue-dark: #1659a7;
+    --blue-soft: #d9efff;
+
+    --sky: #87ceeb;
+
+    --dark: #202020;
+
+    --white: #ffffff;
+    --cream: #fffdf4;
+
+    --orange: #f28c28;
+
+    --red: #d94a38;
+
+    --green: #3b9f5c;
+
+    --gray: #e7e7e7;
+
+    --shadow:
+        0 12px 30px rgba(0, 0, 0, .13);
+}
+
+
+/* ============================================================
+   BASE
+============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+
+    margin: 0;
+
+    min-height: 100%;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--dark);
+}
+
+
+body {
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,.75),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #8ed8f8 0%,
+            #ccefff 55%,
+            #fff8ba 100%
+        );
+}
+
+
+button,
+input {
+
+    font: inherit;
+}
+
+
+button {
+
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   BARRA SUPERIOR
+============================================================ */
+
+#topBar {
+
+    min-height: 58px;
+
+    padding:
+        10px
+        24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: var(--dark);
+
+    color: white;
+}
+
+
+.brand {
+
+    font-weight: 900;
+
+    letter-spacing: .5px;
+}
+
+
+.header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+#sectionLabel {
+
+    background: var(--yellow);
+
+    color: var(--dark);
+
+    font-size: .85rem;
+
+    font-weight: 900;
+
+    padding:
+        8px
+        14px;
+
+    border-radius: 999px;
+}
+
+
+#screenCounter {
+
+    font-size: .9rem;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   BARRA DE PROGRESO
+============================================================ */
+
+#progressArea {
+
+    width: 100%;
+
+    height: 10px;
+
+    background: rgba(255,255,255,.75);
+
+    border-bottom:
+        2px solid rgba(0,0,0,.2);
+}
+
+
+#progressTrack {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+#progressBar {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--yellow),
+            var(--orange)
+        );
+
+    transition:
+        width .35s ease;
+}
+
+
+/* ============================================================
+   PANTALLAS
+============================================================ */
+
+main {
+
+    min-height:
+        calc(100vh - 70px);
+}
+
+
+.screen {
+
+    display: none;
+
+    min-height:
+        calc(100vh - 70px);
+
+    padding:
+        36px
+        5vw;
+
+    animation:
+        appear .35s ease;
+}
+
+
+.screen.active {
+
+    display: block;
+}
+
+
+@keyframes appear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ============================================================
+   PORTADA
+============================================================ */
+
+.intro-screen {
+
+    align-items: center;
+}
+
+
+.intro-screen.active {
+
+    display: flex;
+}
+
+
+.hero {
+
+    width:
+        min(1180px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.25fr
+        .75fr;
+
+    align-items: center;
+
+    gap: 40px;
+
+    background:
+        rgba(255,255,255,.93);
+
+    border:
+        4px solid
+        var(--dark);
+
+    border-radius:
+        28px;
+
+    padding:
+        44px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+.eyebrow {
+
+    display: inline-block;
+
+    background:
+        var(--yellow);
+
+    border:
+        2px solid
+        var(--dark);
+
+    padding:
+        7px
+        12px;
+
+    border-radius:
+        10px;
+
+    font-weight:
+        900;
+}
+
+
+.hero h1 {
+
+    margin:
+        20px
+        0
+        10px;
+
+    font-size:
+        clamp(
+            2.6rem,
+            5vw,
+            5.5rem
+        );
+
+    line-height:
+        .94;
+
+    letter-spacing:
+        -3px;
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    color:
+        var(--blue);
+
+    font-size:
+        .64em;
+
+    letter-spacing:
+        -2px;
+}
+
+
+.big-question {
+
+    max-width:
+        760px;
+
+    font-size:
+        clamp(
+            1.1rem,
+            2vw,
+            1.55rem
+        );
+
+    line-height:
+        1.45;
+}
+
+
+.route {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin:
+        25px
+        0;
+}
+
+
+.route span {
+
+    background:
+        var(--yellow-soft);
+
+    border:
+        2px solid
+        var(--dark);
+
+    border-radius:
+        10px;
+
+    font-weight:
+        900;
+
+    padding:
+        9px
+        13px;
+}
+
+
+.route strong {
+
+    font-size:
+        1.5rem;
+}
+
+
+.hero-image {
+
+    text-align:
+        center;
+}
+
+
+.hero-image img {
+
+    width:
+        100%;
+
+    max-height:
+        470px;
+
+    object-fit:
+        contain;
+}
+
+
+/* ============================================================
+   BOTONES GENERALES
+============================================================ */
+
+.primary-btn,
+.continue-btn,
+.password-btn,
+.reveal-btn,
+.final-reveal-btn {
+
+    border:
+        3px solid
+        var(--dark);
+
+    background:
+        var(--yellow);
+
+    color:
+        var(--dark);
+
+    font-weight:
+        900;
+
+    padding:
+        14px
+        24px;
+
+    border-radius:
+        13px;
+
+    box-shadow:
+        4px
+        4px
+        0
+        var(--dark);
+
+    transition:
+        .15s ease;
+}
+
+
+.primary-btn:hover,
+.continue-btn:hover,
+.password-btn:hover,
+.reveal-btn:hover,
+.final-reveal-btn:hover {
+
+    transform:
+        translate(-2px, -2px);
+
+    box-shadow:
+        6px
+        6px
+        0
+        var(--dark);
+}
+
+
+/* ============================================================
+   ACTIVIDADES
+============================================================ */
+
+.content-grid {
+
+    width:
+        min(1150px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        280px
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap:
+        34px;
+}
+
+
+.character-column {
+
+    display: flex;
+
+    justify-content:
+        center;
+}
+
+
+.character {
+
+    max-width:
+        100%;
+
+    max-height:
+        500px;
+
+    object-fit:
+        contain;
+}
+
+
+.activity-card {
+
+    min-width: 0;
+
+    background:
+        rgba(255,255,255,.96);
+
+    border:
+        4px solid
+        var(--dark);
+
+    border-radius:
+        24px;
+
+    padding:
+        30px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+.phase-label {
+
+    display:
+        inline-block;
+
+    background:
+        var(--dark);
+
+    color:
+        white;
+
+    border-radius:
+        999px;
+
+    padding:
+        7px
+        14px;
+
+    font-size:
+        .85rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .6px;
+}
+
+
+.activity-card h2 {
+
+    font-size:
+        clamp(
+            1.7rem,
+            3vw,
+            2.7rem
+        );
+
+    margin:
+        18px
+        0
+        10px;
+}
+
+
+.activity-card h3 {
+
+    font-size:
+        clamp(
+            1.2rem,
+            2vw,
+            1.55rem
+        );
+
+    margin:
+        24px
+        0
+        15px;
+}
+
+
+.intro-text {
+
+    background:
+        var(--yellow-soft);
+
+    border-left:
+        8px solid
+        var(--yellow);
+
+    border-radius:
+        8px;
+
+    padding:
+        15px
+        17px;
+
+    line-height:
+        1.55;
+
+    font-size:
+        1.05rem;
+}
+
+
+/* ============================================================
+   TEMPORIZADOR
+============================================================ */
+
+.timer-message {
+
+    min-height:
+        25px;
+
+    margin:
+        10px
+        0;
+
+    color:
+        #555;
+
+    font-weight:
+        700;
+}
+
+
+/* ============================================================
+   RESPUESTAS
+============================================================ */
+
+.answers {
+
+    display:
+        grid;
+
+    gap:
+        12px;
+}
+
+
+.answer {
+
+    width:
+        100%;
+
+    text-align:
+        left;
+
+    padding:
+        15px
+        17px;
+
+    border:
+        3px solid
+        var(--dark);
+
+    border-radius:
+        13px;
+
+    background:
+        white;
+
+    font-weight:
+        700;
+
+    line-height:
+        1.35;
+
+    transition:
+        .15s ease;
+}
+
+
+.answer:hover:not(:disabled) {
+
+    transform:
+        translateX(4px);
+
+    background:
+        #fff8c9;
+}
+
+
+.answer:disabled {
+
+    cursor:
+        not-allowed;
+
+    opacity:
+        .55;
+}
+
+
+.answer.correct-selected {
+
+    background:
+        #d9f5df;
+
+    border-color:
+        #267c3d;
+
+    opacity: 1;
+}
+
+
+.answer.wrong-selected {
+
+    background:
+        #ffe0dc;
+
+    border-color:
+        #a93a2e;
+
+    opacity: 1;
+}
+
+
+/* ============================================================
+   FEEDBACK
+============================================================ */
+
+.feedback {
+
+    display:
+        none;
+
+    margin-top:
+        18px;
+
+    padding:
+        15px
+        18px;
+
+    border-radius:
+        13px;
+
+    font-weight:
+        700;
+
+    line-height:
+        1.45;
+}
+
+
+.feedback.visible {
+
+    display:
+        block;
+}
+
+
+.feedback.good {
+
+    background:
+        #def6e3;
+
+    border:
+        2px solid
+        #37864b;
+}
+
+
+.feedback.bad {
+
+    background:
+        #ffe5e0;
+
+    border:
+        2px solid
+        #bc4a3d;
+}
+
+
+.continue-btn {
+
+    display:
+        block;
+
+    margin-top:
+        20px;
+}
+
+
+/* ============================================================
+   PREGUNTAS ORALES
+============================================================ */
+
+.oral-question {
+
+    margin-top:
+        20px;
+
+    background:
+        #dceeff;
+
+    border:
+        3px solid
+        var(--blue);
+
+    border-radius:
+        13px;
+
+    padding:
+        16px;
+
+    line-height:
+        1.5;
+}
+
+
+/* ============================================================
+   ALTOS
+============================================================ */
+
+.stop-screen {
+
+    background:
+
+        repeating-linear-gradient(
+
+            -45deg,
+
+            rgba(255,213,33,.18),
+
+            rgba(255,213,33,.18)
+            20px,
+
+            rgba(255,255,255,.15)
+            20px,
+
+            rgba(255,255,255,.15)
+            40px
+        );
+}
+
+
+.stop-layout {
+
+    width:
+        min(1180px, 100%);
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        250px
+        minmax(0, 1fr);
+
+    align-items:
+        center;
+
+    gap:
+        35px;
+}
+
+
+.stop-character {
+
+    width:
+        100%;
+
+    max-height:
+        470px;
+
+    object-fit:
+        contain;
+}
+
+
+.stop-card {
+
+    min-width:
+        0;
+
+    background:
+        white;
+
+    border:
+        5px solid
+        var(--dark);
+
+    border-radius:
+        28px;
+
+    padding:
+        32px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+.stop-sign {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        105px;
+
+    height:
+        105px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--red);
+
+    color:
+        white;
+
+    border:
+        7px solid
+        white;
+
+    outline:
+        5px solid
+        var(--red);
+
+    font-size:
+        1.5rem;
+
+    font-weight:
+        900;
+
+    margin-bottom:
+        14px;
+}
+
+
+.stop-card h2 {
+
+    font-size:
+        clamp(
+            1.7rem,
+            3vw,
+            2.5rem
+        );
+}
+
+
+.reveal-btn {
+
+    margin:
+        10px
+        8px
+        10px
+        0;
+}
+
+
+.reveal-box,
+.summary-box {
+
+    margin-top:
+        15px;
+
+    border-radius:
+        15px;
+
+    padding:
+        17px;
+
+    line-height:
+        1.45;
+}
+
+
+.reveal-box {
+
+    background:
+        #fff6bb;
+
+    border:
+        3px solid
+        var(--yellow);
+}
+
+
+.reveal-box strong {
+
+    font-size:
+        1.25rem;
+}
+
+
+.summary-box {
+
+    background:
+        var(--dark);
+
+    color:
+        white;
+
+    font-size:
+        1.15rem;
+
+    font-weight:
+        800;
+
+    border:
+        4px solid
+        var(--yellow);
+}
+
+
+/* ============================================================
+   BOTÓN PROFUNDIZAR
+============================================================ */
+
+.reveal-secondary {
+
+    display: block;
+
+    margin-top:
+        34px;
+
+    margin-bottom:
+        18px;
+
+    background:
+        var(--blue);
+
+    color:
+        white;
+
+    border-color:
+        var(--dark);
+}
+
+
+.reveal-secondary:hover {
+
+    background:
+        var(--blue-dark);
+
+    color:
+        white;
+}
+
+
+/* ============================================================
+   FLUJOS CONCEPTUALES
+============================================================ */
+
+.concept-flow {
+
+    margin-top:
+        20px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    /*
+        IMPORTANTE:
+        NO permitimos salto de línea
+        en pantallas normales.
+    */
+
+    flex-wrap:
+        nowrap;
+
+    white-space:
+        nowrap;
+
+    overflow-x:
+        auto;
+
+    padding:
+        5px
+        2px
+        10px;
+}
+
+
+.concept-flow span {
+
+    flex:
+        0 0 auto;
+
+    background:
+        var(--yellow);
+
+    border:
+        3px solid
+        var(--dark);
+
+    border-radius:
+        11px;
+
+    padding:
+        13px
+        18px;
+
+    font-weight:
+        900;
+
+    text-align:
+        center;
+}
+
+
+.concept-flow strong {
+
+    flex:
+        0 0 auto;
+
+    font-size:
+        1.7rem;
+}
+
+
+.concept-flow.secondary span {
+
+    background:
+        var(--blue-soft);
+}
+
+
+/* ============================================================
+   NECESIDAD / BENEFICIO / RIESGO
+============================================================ */
+
+.three-concepts {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        13px;
+
+    margin-top:
+        20px;
+}
+
+
+.three-concepts > div {
+
+    background:
+        var(--yellow-soft);
+
+    border:
+        3px solid
+        var(--dark);
+
+    border-radius:
+        15px;
+
+    padding:
+        17px;
+
+    text-align:
+        center;
+}
+
+
+.three-concepts strong {
+
+    font-size:
+        1.1rem;
+}
+
+
+/* ============================================================
+   CONTRASEÑAS
+============================================================ */
+
+.password-area {
+
+    margin-top:
+        24px;
+
+    padding-top:
+        20px;
+
+    border-top:
+        3px dashed
+        #aaa;
+}
+
+
+.password-area label {
+
+    display:
+        block;
+
+    margin-bottom:
+        10px;
+
+    font-weight:
+        900;
+}
+
+
+.password-row {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        10px;
+}
+
+
+.password-input {
+
+    width:
+        min(280px, 100%);
+
+    border:
+        3px solid
+        var(--dark);
+
+    border-radius:
+        10px;
+
+    padding:
+        12px;
+
+    font-size:
+        1.1rem;
+
+    text-transform:
+        uppercase;
+}
+
+
+.password-feedback {
+
+    margin-top:
+        10px;
+
+    min-height:
+        22px;
+
+    font-weight:
+        800;
+}
+
+
+.password-feedback.error {
+
+    color:
+        var(--red);
+}
+
+
+.password-feedback.success {
+
+    color:
+        var(--green);
+}
+
+
+/* ============================================================
+   CIERRE
+============================================================ */
+
+.final-layout {
+
+    width:
+        min(1150px, 100%);
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        330px;
+
+    align-items:
+        center;
+
+    gap:
+        35px;
+}
+
+
+.final-content {
+
+    min-width: 0;
+
+    background:
+        white;
+
+    border:
+        4px solid
+        var(--dark);
+
+    border-radius:
+        25px;
+
+    padding:
+        34px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+.final-content h2 {
+
+    font-size:
+        clamp(
+            1.7rem,
+            3vw,
+            2.8rem
+        );
+}
+
+
+.final-question {
+
+    font-size:
+        clamp(
+            1.2rem,
+            2.3vw,
+            1.8rem
+        );
+
+    font-weight:
+        900;
+
+    line-height:
+        1.4;
+
+    color:
+        var(--blue);
+}
+
+
+.final-ideas {
+
+    margin-top:
+        24px;
+}
+
+
+.final-idea {
+
+    border:
+        3px solid
+        var(--dark);
+
+    border-radius:
+        13px;
+
+    margin-bottom:
+        12px;
+
+    padding:
+        15px;
+
+    background:
+        var(--yellow-soft);
+}
+
+
+.final-idea strong {
+
+    font-size:
+        1.05rem;
+}
+
+
+.final-summary {
+
+    margin-top:
+        20px;
+
+    background:
+        var(--dark);
+
+    color:
+        white;
+
+    border:
+        5px solid
+        var(--yellow);
+
+    border-radius:
+        17px;
+
+    padding:
+        20px;
+
+    font-size:
+        1.25rem;
+
+    line-height:
+        1.45;
+
+    font-weight:
+        900;
+}
+
+
+.final-character img {
+
+    width:
+        100%;
+
+    max-height:
+        520px;
+
+    object-fit:
+        contain;
+}
+
+
+/* ============================================================
+   AUXILIARES
+============================================================ */
+
+.hidden {
+
+    display:
+        none !important;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 900px) {
+
+    .screen {
+
+        padding:
+            25px
+            16px;
+    }
+
+
+    .hero,
+    .content-grid,
+    .stop-layout,
+    .final-layout {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .hero {
+
+        padding:
+            25px;
+    }
+
+
+    .hero-image {
+
+        order:
+            -1;
+    }
+
+
+    .hero-image img {
+
+        max-height:
+            250px;
+    }
+
+
+    .character-column {
+
+        max-height:
+            220px;
+    }
+
+
+    .character {
+
+        max-height:
+            220px;
+    }
+
+
+    .stop-character {
+
+        max-height:
+            220px;
+    }
+
+
+    .final-character {
+
+        text-align:
+            center;
+    }
+
+
+    .final-character img {
+
+        max-height:
+            260px;
+    }
+
+
+    .three-concepts {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /*
+       En pantallas pequeñas
+       permitimos desplazamiento horizontal,
+       pero NO rompemos el esquema en dos filas.
+    */
+
+    .concept-flow {
+
+        justify-content:
+            flex-start;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    #topBar {
+
+        padding:
+            9px
+            12px;
+
+        gap:
+            8px;
+    }
+
+
+    .brand {
+
+        font-size:
+            .82rem;
+    }
+
+
+    .header-right {
+
+        gap:
+            5px;
+    }
+
+
+    #sectionLabel {
+
+        font-size:
+            .72rem;
+
+        padding:
+            6px
+            9px;
+    }
+
+
+    #screenCounter {
+
+        font-size:
+            .72rem;
+    }
+
+
+    .activity-card,
+    .stop-card,
+    .final-content {
+
+        padding:
+            20px;
+    }
+
+
+    .answer {
+
+        padding:
+            13px;
+    }
+
+
+    .hero h1 {
+
+        letter-spacing:
+            -2px;
+    }
+
+
+    .password-row {
+
+        align-items:
+            stretch;
+    }
+
+
+    .password-input {
+
+        width:
+            100%;
+    }
+
+
+    .password-btn {
+
+        width:
+            100%;
+    }
+
+}

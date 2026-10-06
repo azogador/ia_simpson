@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Inteligencia Artificial en la vida cotidiana
+    </title>
+
+    <meta name="description"
+          content="Actividad interactiva para reconocer usos de IA, analizar el impacto de los datos y reflexionar sobre privacidad.">
+
+    <!-- =====================================================
+         OPEN GRAPH / WHATSAPP
+         Cambiar TU-SITIO cuando tengamos la URL definitiva
+    ====================================================== -->
+
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:title"
+          content="Inteligencia Artificial en la vida cotidiana">
+
+    <meta property="og:description"
+          content="Reconocer · Analizar · Decidir">
+
+    <meta property="og:image"
+          content="https://TU-SITIO.netlify.app/img/portada-familia.png">
+
+    <meta property="og:url"
+          content="https://TU-SITIO.netlify.app/">
+
+    <meta name="twitter:card"
+          content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="Inteligencia Artificial en la vida cotidiana">
+
+    <meta name="twitter:description"
+          content="Reconocer · Analizar · Decidir">
+
+    <meta name="twitter:image"
+          content="https://TU-SITIO.netlify.app/img/portada-familia.png">
+
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+
+<body>
+
+<div id="app">
+
+    <!-- =====================================================
+         BARRA SUPERIOR
+    ====================================================== -->
+
+    <header id="topBar">
+
+        <div class="brand">
+            IA en la vida cotidiana
+        </div>
+
+        <div class="header-right">
+
+            <div id="sectionLabel">
+                INICIO
+            </div>
+
+            <div id="screenCounter">
+                1 de 18
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         BARRA DE PROGRESO
+    ====================================================== -->
+
+    <div id="progressArea">
+
+        <div id="progressTrack">
+            <div id="progressBar"></div>
+        </div>
+
+    </div>
+
+
+    <main>
+
+
+        <!-- =================================================
+             1 - PORTADA
+        ================================================== -->
+
+        <section class="screen intro-screen active"
+                 data-screen="1"
+                 data-section="INICIO">
+
+            <div class="hero">
+
+                <div class="hero-text">
+
+                    <div class="eyebrow">
+                        8.º 1 · Liceo N.º 17
+                    </div>
+
+                    <h1>
+                        Inteligencia Artificial
+
+                        <span>
+                            en la vida cotidiana
+                        </span>
+                    </h1>
+
+                    <p class="big-question">
+                        ¿Cómo influyen los datos en los resultados
+                        de los sistemas de Inteligencia Artificial
+                        que usamos todos los días?
+                    </p>
+
+                    <div class="route">
+
+                        <span>RECONOCER</span>
+
+                        <strong>→</strong>
+
+                        <span>ANALIZAR</span>
+
+                        <strong>→</strong>
+
+                        <span>DECIDIR</span>
+
+                    </div>
+
+                    <button class="primary-btn start-btn">
+                        COMENZAR
+                    </button>
+
+                </div>
+
+
+                <div class="hero-image">
+
+                    <img src="img/portada-familia.png"
+                         alt="Familia">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             2 - RECONOCER 1
+        ================================================== -->
+
+        <section class="screen quiz-screen"
+                 data-screen="2"
+                 data-section="RECONOCER"
+                 data-time="20">
+
+            <div class="content-grid">
+
+                <div class="character-column">
+
+                    <img src="img/reconocer-bart.png"
+                         class="character"
+                         alt="">
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="phase-label">
+                        RECONOCER · 1
+                    </div>
+
+                    <h2>
+                        Recomendaciones de YouTube
+                    </h2>
+
+                    <p class="intro-text">
+                        YouTube observa qué videos miramos,
+                        cuáles dejamos rápidamente y qué contenidos
+                        suelen interesarnos. Con esos datos intenta
+                        predecir qué videos podrían gustarnos después.
+                    </p>
+
+                    <h3>
+                        ¿Las recomendaciones de YouTube
+                        utilizan Inteligencia Artificial?
+                    </h3>
+
+                    <div class="timer-message"></div>
+
+
+                    <div class="answers">
+
+                        <button class="answer"
+                                data-correct="true"
+                                data-feedback="Correcto. Las recomendaciones se apoyan en datos y patrones para hacer predicciones sobre nuestros posibles intereses.">
+                            Sí, usa IA.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="No es correcto. Las recomendaciones no se limitan a seguir una lista fija de instrucciones. El sistema analiza muchos datos sobre comportamientos y busca patrones para estimar qué contenido podría interesar a cada persona.">
+                            No, funciona solamente con reglas fijas.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="La pista está en cómo decide qué recomendar. Utiliza datos de uso y patrones encontrados en grandes cantidades de información. Esa forma de trabajar es característica de muchos sistemas de IA.">
+                            No estoy seguro/a.
+                        </button>
+
+                    </div>
+
+
+                    <div class="feedback"></div>
+
+
+                    <button class="continue-btn hidden">
+                        CONTINUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             3 - RECONOCER 2
+        ================================================== -->
+
+        <section class="screen quiz-screen"
+                 data-screen="3"
+                 data-section="RECONOCER"
+                 data-time="20">
+
+            <div class="content-grid">
+
+                <div class="character-column">
+
+                    <img src="img/reconocer-bart.png"
+                         class="character"
+                         alt="">
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="phase-label">
+                        RECONOCER · 2
+                    </div>
+
+                    <h2>
+                        Predicción del teclado
+                    </h2>
+
+                    <p class="intro-text">
+                        Cuando escribimos en el celular,
+                        el teclado puede sugerir la próxima palabra.
+                        Para hacerlo analiza lo que estamos escribiendo
+                        y patrones aprendidos a partir de grandes cantidades de texto.
+                    </p>
+
+                    <h3>
+                        ¿La predicción de palabras
+                        del teclado utiliza IA?
+                    </h3>
+
+                    <div class="timer-message"></div>
+
+
+                    <div class="answers">
+
+                        <button class="answer"
+                                data-correct="true"
+                                data-feedback="Correcto. El teclado intenta predecir una palabra a partir del contexto y de patrones aprendidos.">
+                            Sí, usa IA.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="No es correcto. El teclado no se limita a mostrar siempre la misma palabra. Analiza el contexto y utiliza patrones aprendidos para estimar qué palabra podría venir después.">
+                            No, simplemente sigue una lista fija de palabras.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="Observá que la sugerencia cambia según lo que escribimos. El sistema usa datos y patrones para hacer una predicción, no solamente una regla fija.">
+                            No estoy seguro/a.
+                        </button>
+
+                    </div>
+
+
+                    <div class="feedback"></div>
+
+
+                    <button class="continue-btn hidden">
+                        CONTINUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             4 - RECONOCER 3
+        ================================================== -->
+
+        <section class="screen quiz-screen"
+                 data-screen="4"
+                 data-section="RECONOCER"
+                 data-time="20">
+
+            <div class="content-grid">
+
+                <div class="character-column">
+
+                    <img src="img/reconocer-bart.png"
+                         class="character"
+                         alt="">
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="phase-label">
+                        RECONOCER · 3
+                    </div>
+
+                    <h2>
+                        Enemigo de videojuego
+                    </h2>
+
+                    <p class="intro-text">
+                        En un videojuego, un enemigo puede estar programado
+                        para perseguir al jugador cuando está cerca,
+                        atacar si entra en determinada zona
+                        y regresar si se aleja demasiado.
+                    </p>
+
+                    <h3>
+                        ¿Ese enemigo usa necesariamente
+                        Inteligencia Artificial?
+                    </h3>
+
+                    <div class="timer-message"></div>
+
+
+                    <div class="answers">
+
+                        <button class="answer"
+                                data-feedback="Que un sistema elija entre varias acciones no significa necesariamente que use IA. Si responde a condiciones previamente programadas, puede estar funcionando solamente con reglas.">
+                            Sí, porque toma decisiones.
+                        </button>
+
+
+                        <button class="answer"
+                                data-correct="true"
+                                data-feedback="Correcto. Un comportamiento puede parecer inteligente y, sin embargo, estar completamente definido por reglas programadas.">
+                            No necesariamente: puede seguir reglas programadas.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="Moverse de forma automática tampoco demuestra que exista IA. Un programa puede ejecutar movimientos y reaccionar al jugador siguiendo instrucciones escritas de antemano.">
+                            Sí, porque se mueve solo.
+                        </button>
+
+                    </div>
+
+
+                    <div class="feedback"></div>
+
+
+                    <button class="continue-btn hidden">
+                        CONTINUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             5 - RECONOCER 4
+        ================================================== -->
+
+        <section class="screen quiz-screen"
+                 data-screen="5"
+                 data-section="RECONOCER"
+                 data-time="20">
+
+            <div class="content-grid">
+
+                <div class="character-column">
+
+                    <img src="img/reconocer-bart.png"
+                         class="character"
+                         alt="">
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="phase-label">
+                        RECONOCER · 4
+                    </div>
+
+                    <h2>
+                        El ascensor
+                    </h2>
+
+                    <p class="intro-text">
+                        Un ascensor recibe pedidos desde distintos pisos.
+                        Su programa decide dónde detenerse y en qué orden
+                        atender las llamadas según reglas establecidas previamente.
+                    </p>
+
+                    <h3>
+                        ¿El hecho de que el ascensor tome decisiones
+                        significa que usa IA?
+                    </h3>
+
+                    <div class="timer-message"></div>
+
+
+                    <div class="answers">
+
+                        <button class="answer"
+                                data-feedback="No necesariamente. El ascensor puede elegir el próximo piso aplicando reglas previamente programadas, sin aprender de datos ni buscar patrones.">
+                            Sí, porque decide a qué piso ir.
+                        </button>
+
+
+                        <button class="answer"
+                                data-correct="true"
+                                data-feedback="Correcto. Tomar una decisión automática no implica usar IA. Lo importante es comprender cómo se produce esa decisión.">
+                            No necesariamente: puede seguir reglas programadas.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="Recibir información y reaccionar no alcanza para considerar que un sistema usa IA. Muchos automatismos hacen eso siguiendo condiciones definidas por un programador.">
+                            Sí, porque recibe información y responde.
+                        </button>
+
+                    </div>
+
+
+                    <div class="feedback"></div>
+
+
+                    <button class="continue-btn hidden">
+                        CONTINUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             6 - ALTO 1
+        ================================================== -->
+
+        <section class="screen stop-screen"
+                 data-screen="6"
+                 data-section="ALTO 1">
+
+            <div class="stop-layout">
+
+                <img src="img/alto-1-flanders.png"
+                     class="stop-character"
+                     alt="">
+
+
+                <div class="stop-card">
+
+                    <div class="stop-sign">
+                        ALTO
+                    </div>
+
+                    <h2>
+                        ¿Que una máquina tome decisiones significa
+                        necesariamente que usa Inteligencia Artificial?
+                    </h2>
+
+
+                    <button class="reveal-btn"
+                            data-reveal="alto1-a">
+
+                        VER PRIMERA IDEA
+
+                    </button>
+
+
+                    <div id="alto1-a"
+                         class="reveal-box hidden">
+
+                        <strong>
+                            REGLAS PROGRAMADAS
+                        </strong>
+
+                        <p>
+                            Algunos sistemas actúan automáticamente
+                            siguiendo condiciones definidas previamente.
+                        </p>
+
+                    </div>
+
+
+                    <button class="reveal-btn hidden"
+                            data-reveal="alto1-b">
+
+                        VER SEGUNDA IDEA
+
+                    </button>
+
+
+                    <div id="alto1-b"
+                         class="reveal-box hidden">
+
+                        <strong>
+                            DATOS + PATRONES
+                        </strong>
+
+                        <p>
+                            Muchos sistemas de IA utilizan datos
+                            para reconocer patrones y producir
+                            resultados o predicciones.
+                        </p>
+
+                    </div>
+
+
+                    <div id="alto1-summary"
+                         class="summary-box hidden">
+
+                        No todo sistema automático usa IA.
+                        Algunos siguen reglas programadas;
+                        otros utilizan datos y patrones.
+
+                    </div>
+
+
+                    <div class="password-area hidden"
+                         data-lock="alto1">
+
+                        <label>
+                            Ingresá la clave del docente
+                        </label>
+
+                        <div class="password-row">
+
+                            <input type="password"
+                                   autocomplete="off"
+                                   class="password-input">
+
+                            <button class="password-btn">
+                                DESBLOQUEAR
+                            </button>
+
+                        </div>
+
+                        <div class="password-feedback"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             7 - ANALIZAR 1
+        ================================================== -->
+
+        <section class="screen quiz-screen"
+                 data-screen="7"
+                 data-section="ANALIZAR"
+                 data-time="30">
+
+            <div class="content-grid">
+
+                <div class="character-column">
+
+                    <img src="img/analizar-homero.png"
+                         class="character"
+                         alt="">
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="phase-label">
+                        ANALIZAR · 1
+                    </div>
+
+                    <h2>
+                        ¿Qué problema tienen los datos?
+                    </h2>
+
+                    <p class="intro-text">
+                        Un sistema de reconocimiento facial fue entrenado
+                        principalmente con fotografías de adultos
+                        y con pocas imágenes de adolescentes.
+                        Luego comenzó a equivocarse con mayor frecuencia con adolescentes.
+                    </p>
+
+                    <h3>
+                        ¿Cuál es el principal problema
+                        de los datos utilizados?
+                    </h3>
+
+                    <div class="timer-message"></div>
+
+
+                    <div class="answers">
+
+                        <button class="answer"
+                                data-feedback="La cantidad de datos no es el problema principal. Un sistema puede tener muchísimas fotografías y aun así funcionar mal si algunos grupos están poco representados.">
+                            Hay demasiadas fotografías en total.
+                        </button>
+
+
+                        <button class="answer"
+                                data-correct="true"
+                                data-feedback="Correcto. No basta con tener muchos datos: también importa a quiénes representan esos datos.">
+                            Los datos representan mucho mejor
+                            a los adultos que a los adolescentes.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="La calidad de la cámara podría influir en otros casos, pero aquí el problema señalado es que existen muchas imágenes de adultos y pocas de adolescentes.">
+                            Necesita fotografías tomadas con mejores cámaras.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="Los rostros pueden variar, pero eso no explica por sí solo lo que ocurre. El caso señala que los adolescentes están poco representados en los datos de entrenamiento.">
+                            Los adolescentes cambian demasiado de aspecto.
+                        </button>
+
+                    </div>
+
+
+                    <div class="feedback"></div>
+
+
+                    <button class="continue-btn hidden">
+                        CONTINUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             8 - ANALIZAR 2
+        ================================================== -->
+
+        <section class="screen quiz-screen"
+                 data-screen="8"
+                 data-section="ANALIZAR"
+                 data-time="30">
+
+            <div class="content-grid">
+
+                <div class="character-column">
+
+                    <img src="img/analizar-homero.png"
+                         class="character"
+                         alt="">
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="phase-label">
+                        ANALIZAR · 2
+                    </div>
+
+                    <h2>
+                        ¿Por qué puede equivocarse más?
+                    </h2>
+
+                    <p class="intro-text">
+                        Los sistemas que aprenden a partir de datos
+                        buscan patrones en los ejemplos que reciben.
+                        Si algunos grupos aparecen poco,
+                        el sistema dispone de menos ejemplos para aprender sobre ellos.
+                    </p>
+
+                    <h3>
+                        ¿Por qué podría fallar más
+                        al reconocer adolescentes?
+                    </h3>
+
+                    <div class="timer-message"></div>
+
+
+                    <div class="answers">
+
+                        <button class="answer"
+                                data-correct="true"
+                                data-feedback="Correcto. Si predominan los ejemplos de adultos, el sistema puede aprender patrones que funcionan mejor para ese grupo.">
+                            Porque aprendió principalmente
+                            a partir de ejemplos de adultos.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="No existe una regla que diga que una IA siempre reconozca peor a las personas jóvenes. El resultado depende de cómo fue entrenado el sistema y de los datos utilizados.">
+                            Porque una IA siempre reconoce peor
+                            a las personas jóvenes.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="El uso que hagan los adolescentes de la tecnología no explica los errores del reconocimiento facial. El problema está en los datos con los que el sistema aprendió.">
+                            Porque los adolescentes utilizan más tecnología.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="El sistema no tiene intención de equivocarse. Los resultados desiguales pueden aparecer porque los datos de entrenamiento representan de forma insuficiente a algunas personas.">
+                            Porque el sistema decide equivocarse con ellos.
+                        </button>
+
+                    </div>
+
+
+                    <div class="feedback"></div>
+
+
+                    <button class="continue-btn hidden">
+                        CONTINUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             9 - ANALIZAR 3
+        ================================================== -->
+
+        <section class="screen quiz-screen"
+                 data-screen="9"
+                 data-section="ANALIZAR"
+                 data-time="30">
+
+            <div class="content-grid">
+
+                <div class="character-column">
+
+                    <img src="img/analizar-homero.png"
+                         class="character"
+                         alt="">
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="phase-label">
+                        ANALIZAR · 3
+                    </div>
+
+                    <h2>
+                        Del error a las consecuencias
+                    </h2>
+
+                    <p class="intro-text">
+                        Un error de reconocimiento puede parecer solamente técnico,
+                        pero sus consecuencias dependen del lugar donde se use.
+                        Algunos errores pueden terminar afectando a personas reales.
+                    </p>
+
+                    <h3>
+                        ¿Qué situación muestra mejor
+                        una consecuencia importante?
+                    </h3>
+
+                    <div class="timer-message"></div>
+
+
+                    <div class="answers">
+
+                        <button class="answer"
+                                data-feedback="Eso sería un problema de rendimiento, pero no muestra una consecuencia desigual sobre distintos grupos de personas.">
+                            El sistema tarda algunos segundos más
+                            en abrir una fotografía.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="Cambiar el tamaño de una imagen automáticamente no representa el problema que estamos analizando. Aquí buscamos consecuencias que afecten a personas.">
+                            Una aplicación cambia automáticamente
+                            el tamaño de una imagen.
+                        </button>
+
+
+                        <button class="answer"
+                                data-correct="true"
+                                data-feedback="Correcto. Cuando un error afecta más a determinadas personas y condiciona su acceso o tratamiento, deja de ser solamente un problema técnico.">
+                            Un sistema de acceso rechaza con mayor frecuencia
+                            a adolescentes porque no los reconoce correctamente.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="El consumo de batería es un problema técnico, pero no representa una consecuencia social derivada de datos poco representativos.">
+                            La computadora consume un poco más de batería.
+                        </button>
+
+                    </div>
+
+
+                    <div class="feedback"></div>
+
+
+                    <div class="oral-question hidden">
+
+                        <strong>
+                            Ahora conversemos:
+                        </strong>
+
+                        ¿Qué cambiaríamos en los datos
+                        para intentar mejorar este sistema?
+
+                    </div>
+
+
+                    <button class="continue-btn hidden">
+                        CONTINUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             10 - ALTO 2
+        ================================================== -->
+
+        <section class="screen stop-screen"
+                 data-screen="10"
+                 data-section="ALTO 2">
+
+            <div class="stop-layout">
+
+                <img src="img/alto-2-milhouse.png"
+                     class="stop-character"
+                     alt="">
+
+
+                <div class="stop-card">
+
+                    <div class="stop-sign">
+                        ALTO
+                    </div>
+
+                    <h2>
+                        ¿Qué relación hay entre los datos
+                        que recibe un sistema
+                        y las consecuencias que puede producir?
+                    </h2>
+
+
+                    <button class="reveal-btn"
+                            data-reveal="alto2-a">
+
+                        CONSTRUIR LA IDEA
+
+                    </button>
+
+
+                    <div id="alto2-a"
+                         class="concept-flow hidden">
+
+                        <span>DATOS</span>
+
+                        <strong>→</strong>
+
+                        <span>RESULTADOS</span>
+
+                        <strong>→</strong>
+
+                        <span>CONSECUENCIAS</span>
+
+                    </div>
+
+
+                    <button class="reveal-btn reveal-secondary hidden"
+                            data-reveal="alto2-b">
+
+                        PROFUNDIZAR
+
+                    </button>
+
+
+                    <div id="alto2-b"
+                         class="concept-flow secondary hidden">
+
+                        <span>
+                            Datos poco representativos
+                        </span>
+
+                        <strong>→</strong>
+
+                        <span>
+                            Posible sesgo
+                        </span>
+
+                        <strong>→</strong>
+
+                        <span>
+                            Impacto en personas
+                        </span>
+
+                    </div>
+
+
+                    <div id="alto2-summary"
+                         class="summary-box hidden">
+
+                        Los datos no son neutrales:
+                        si representan mal a algunas personas,
+                        los resultados también pueden ser desiguales.
+
+                    </div>
+
+
+                    <div class="password-area hidden"
+                         data-lock="alto2">
+
+                        <label>
+                            Ingresá la clave del docente
+                        </label>
+
+                        <div class="password-row">
+
+                            <input type="password"
+                                   autocomplete="off"
+                                   class="password-input">
+
+                            <button class="password-btn">
+                                DESBLOQUEAR
+                            </button>
+
+                        </div>
+
+                        <div class="password-feedback"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             11 - DECIDIR 1
+        ================================================== -->
+
+        <section class="screen quiz-screen"
+                 data-screen="11"
+                 data-section="DECIDIR"
+                 data-time="25">
+
+            <div class="content-grid">
+
+                <div class="character-column">
+
+                    <img src="img/decidir-marge.png"
+                         class="character"
+                         alt="">
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="phase-label">
+                        DECIDIR · 1
+                    </div>
+
+                    <h2>
+                        Tu ubicación
+                    </h2>
+
+                    <p class="intro-text">
+                        Una aplicación con IA puede pedir distintos datos
+                        para personalizar lo que muestra.
+                        Algunos pueden ofrecer beneficios,
+                        pero también revelar información muy personal sobre nosotros.
+                    </p>
+
+                    <h3>
+                        La aplicación pide tu ubicación
+                        en tiempo real. ¿Qué harías?
+                    </h3>
+
+                    <div class="timer-message"></div>
+
+
+                    <div class="answers">
+
+                        <button class="answer"
+                                data-feedback="Aceptar siempre sin revisar el motivo puede exponer más información de la necesaria. Conviene saber para qué se usará la ubicación y si realmente hace falta.">
+                            Aceptaría siempre.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="Negarse siempre también puede ser demasiado rígido. En algunos casos la ubicación puede ser útil, por ejemplo en un mapa. Lo importante es valorar necesidad, beneficio y riesgo.">
+                            No aceptaría nunca.
+                        </button>
+
+
+                        <button class="answer"
+                                data-correct="true"
+                                data-feedback="Correcto. Compartir un dato no debería ser automático: conviene pensar para qué se pide, qué beneficio aporta y qué riesgo implica.">
+                            Depende de para qué la necesita
+                            y cómo la usa.
+                        </button>
+
+                    </div>
+
+
+                    <div class="feedback"></div>
+
+
+                    <button class="continue-btn hidden">
+                        CONTINUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             12 - DECIDIR 2
+        ================================================== -->
+
+        <section class="screen quiz-screen"
+                 data-screen="12"
+                 data-section="DECIDIR"
+                 data-time="25">
+
+            <div class="content-grid">
+
+                <div class="character-column">
+
+                    <img src="img/decidir-marge.png"
+                         class="character"
+                         alt="">
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="phase-label">
+                        DECIDIR · 2
+                    </div>
+
+                    <h2>
+                        Tu lista de contactos
+                    </h2>
+
+                    <p class="intro-text">
+                        La misma aplicación solicita acceso
+                        a toda tu lista de contactos para “mejorar recomendaciones”.
+                        Eso permitiría conocer nombres,
+                        teléfonos y otras personas relacionadas contigo.
+                    </p>
+
+                    <h3>
+                        ¿Qué decisión parece más razonable?
+                    </h3>
+
+                    <div class="timer-message"></div>
+
+
+                    <div class="answers">
+
+                        <button class="answer"
+                                data-feedback="Que una aplicación solicite un permiso no significa que ese acceso sea imprescindible. Conviene comprobar si existe una relación clara entre el dato solicitado y la función ofrecida.">
+                            Aceptar, porque si lo pide debe ser necesario.
+                        </button>
+
+
+                        <button class="answer"
+                                data-correct="true"
+                                data-feedback="Correcto. Antes de autorizar conviene preguntarse si ese dato es realmente necesario y qué información propia o ajena quedaría expuesta.">
+                            Revisar si realmente necesita
+                            esos contactos antes de autorizar.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="La lista de contactos contiene información de otras personas y también revela con quién nos relacionamos. Compartirla puede afectar la privacidad propia y ajena.">
+                            Aceptar porque los contactos
+                            no son información personal propia.
+                        </button>
+
+                    </div>
+
+
+                    <div class="feedback"></div>
+
+
+                    <button class="continue-btn hidden">
+                        CONTINUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             13 - DECIDIR 3
+        ================================================== -->
+
+        <section class="screen quiz-screen"
+                 data-screen="13"
+                 data-section="DECIDIR"
+                 data-time="30">
+
+            <div class="content-grid">
+
+                <div class="character-column">
+
+                    <img src="img/decidir-marge.png"
+                         class="character"
+                         alt="">
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="phase-label">
+                        DECIDIR · 3
+                    </div>
+
+                    <h2>
+                        Beneficio y riesgo
+                    </h2>
+
+                    <p class="intro-text">
+                        Una decisión sobre privacidad
+                        casi nunca es solamente “sí” o “no”.
+                        Compartir un dato puede ofrecer una ventaja
+                        y al mismo tiempo generar un riesgo.
+                    </p>
+
+                    <h3>
+                        La aplicación quiere usar tu historial
+                        de búsquedas.
+                        ¿Qué respuesta analiza mejor la situación?
+                    </h3>
+
+                    <div class="timer-message"></div>
+
+
+                    <div class="answers">
+
+                        <button class="answer"
+                                data-feedback="El beneficio no elimina el riesgo. Un dato puede mejorar recomendaciones y, al mismo tiempo, revelar información sobre intereses, hábitos o preocupaciones personales.">
+                            Es bueno porque las recomendaciones serán mejores,
+                            así que no existe ningún problema.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="No todo uso de datos personales es necesariamente perjudicial. Conviene analizar para qué se usan, qué beneficio aportan, qué riesgos existen y qué control tiene la persona.">
+                            Es malo porque cualquier uso
+                            de datos personales debería prohibirse.
+                        </button>
+
+
+                        <button class="answer"
+                                data-correct="true"
+                                data-feedback="Correcto. Una decisión responsable considera beneficios y riesgos al mismo tiempo, no solamente uno de los dos.">
+                            Puede mejorar las recomendaciones,
+                            pero también revelar intereses privados;
+                            conviene saber cómo se guarda y utiliza esa información.
+                        </button>
+
+                    </div>
+
+
+                    <div class="feedback"></div>
+
+
+                    <div class="oral-question hidden">
+
+                        <strong>
+                            Conversemos:
+                        </strong>
+
+                        ¿Que una aplicación pueda utilizar un dato
+                        significa que debería utilizarlo?
+
+                    </div>
+
+
+                    <button class="continue-btn hidden">
+                        CONTINUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             14 - ALTO 3
+        ================================================== -->
+
+        <section class="screen stop-screen"
+                 data-screen="14"
+                 data-section="ALTO 3">
+
+            <div class="stop-layout">
+
+                <img src="img/alto-3-krusty.png"
+                     class="stop-character"
+                     alt="">
+
+
+                <div class="stop-card">
+
+                    <div class="stop-sign">
+                        ALTO
+                    </div>
+
+                    <h2>
+                        ¿Que una aplicación pueda usar un dato
+                        significa que debería usarlo?
+                    </h2>
+
+
+                    <button class="reveal-btn"
+                            data-reveal="alto3-a">
+
+                        PENSEMOS
+
+                    </button>
+
+
+                    <div id="alto3-a"
+                         class="three-concepts hidden">
+
+                        <div>
+
+                            <strong>
+                                NECESIDAD
+                            </strong>
+
+                            <p>
+                                ¿Realmente necesita ese dato?
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                BENEFICIO
+                            </strong>
+
+                            <p>
+                                ¿Qué mejora o función aporta?
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                RIESGO
+                            </strong>
+
+                            <p>
+                                ¿Qué podría pasar con esa información?
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="alto3-summary"
+                         class="summary-box hidden">
+
+                        Una decisión responsable sobre datos personales
+                        considera para qué se piden,
+                        qué beneficio ofrecen
+                        y qué riesgos implican.
+
+                    </div>
+
+
+                    <div class="password-area hidden"
+                         data-lock="alto3">
+
+                        <label>
+                            Ingresá la clave del docente
+                        </label>
+
+
+                        <div class="password-row">
+
+                            <input type="password"
+                                   autocomplete="off"
+                                   class="password-input">
+
+                            <button class="password-btn">
+                                DESBLOQUEAR
+                            </button>
+
+                        </div>
+
+
+                        <div class="password-feedback"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             15 - INTEGRAR 1
+        ================================================== -->
+
+        <section class="screen quiz-screen"
+                 data-screen="15"
+                 data-section="INTEGRAR"
+                 data-time="25">
+
+            <div class="content-grid">
+
+                <div class="character-column">
+
+                    <img src="img/integrar-lisa.png"
+                         class="character"
+                         alt="">
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="phase-label">
+                        INTEGRAR · 1
+                    </div>
+
+                    <h2>
+                        Una IA para aprender mejor
+                    </h2>
+
+                    <p class="intro-text">
+                        Un liceo prueba una aplicación
+                        que recomienda ejercicios personalizados.
+                        Para hacerlo utiliza respuestas anteriores,
+                        tiempo de uso y patrones encontrados en esos datos.
+                    </p>
+
+                    <h3>
+                        ¿Por qué podemos decir
+                        que esta aplicación utiliza IA?
+                    </h3>
+
+                    <div class="timer-message"></div>
+
+
+                    <div class="answers">
+
+                        <button class="answer"
+                                data-feedback="Mostrar ejercicios en una pantalla no alcanza para decir que existe IA. Lo importante es cómo se generan las recomendaciones.">
+                            Porque muestra ejercicios en una pantalla.
+                        </button>
+
+
+                        <button class="answer"
+                                data-correct="true"
+                                data-feedback="Correcto. La aplicación utiliza datos y patrones para producir recomendaciones personalizadas.">
+                            Porque utiliza datos y patrones
+                            para recomendar actividades.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="Un sistema puede funcionar automáticamente siguiendo solamente reglas programadas. La automatización por sí sola no demuestra que exista IA.">
+                            Porque funciona automáticamente.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="El lugar donde se utiliza un sistema no determina si emplea IA. Lo importante es cómo procesa información y produce sus resultados.">
+                            Porque pertenece a un liceo.
+                        </button>
+
+                    </div>
+
+
+                    <div class="feedback"></div>
+
+
+                    <button class="continue-btn hidden">
+                        CONTINUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             16 - INTEGRAR 2
+        ================================================== -->
+
+        <section class="screen quiz-screen"
+                 data-screen="16"
+                 data-section="INTEGRAR"
+                 data-time="30">
+
+            <div class="content-grid">
+
+                <div class="character-column">
+
+                    <img src="img/integrar-lisa.png"
+                         class="character"
+                         alt="">
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="phase-label">
+                        INTEGRAR · 2
+                    </div>
+
+                    <h2>
+                        ¿Representan bien a este grupo?
+                    </h2>
+
+                    <p class="intro-text">
+                        La aplicación fue entrenada principalmente
+                        con información de estudiantes de otros países.
+                        Sin embargo, ahora se utilizará
+                        con estudiantes de este liceo.
+                    </p>
+
+                    <h3>
+                        ¿Qué problema podría aparecer?
+                    </h3>
+
+                    <div class="timer-message"></div>
+
+
+                    <div class="answers">
+
+                        <button class="answer"
+                                data-feedback="Los estudiantes pueden tener contextos, programas educativos y experiencias distintas. La representatividad de los datos sí puede influir en los resultados.">
+                            Ninguno, porque todos los estudiantes aprenden igual.
+                        </button>
+
+
+                        <button class="answer"
+                                data-correct="true"
+                                data-feedback="Correcto. Si los datos no representan bien al grupo que utilizará el sistema, las recomendaciones podrían ser menos adecuadas.">
+                            Podría recomendar actividades menos adecuadas
+                            si los datos no representan bien a este grupo.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="La velocidad del sistema no es el problema presentado. Estamos analizando si los datos representan adecuadamente a quienes utilizarán la aplicación.">
+                            Funcionará más rápido.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="Eso no se desprende del caso y tampoco explica el problema de los datos utilizados para entrenar el sistema.">
+                            Los estudiantes dejarán de necesitar docentes.
+                        </button>
+
+                    </div>
+
+
+                    <div class="feedback"></div>
+
+
+                    <button class="continue-btn hidden">
+                        CONTINUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             17 - INTEGRAR 3
+        ================================================== -->
+
+        <section class="screen quiz-screen"
+                 data-screen="17"
+                 data-section="INTEGRAR"
+                 data-time="30">
+
+            <div class="content-grid">
+
+                <div class="character-column">
+
+                    <img src="img/integrar-lisa.png"
+                         class="character"
+                         alt="">
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="phase-label">
+                        INTEGRAR · 3
+                    </div>
+
+                    <h2>
+                        Ahora tenemos que decidir
+                    </h2>
+
+                    <p class="intro-text">
+                        Para “mejorar las recomendaciones”,
+                        la aplicación quiere acceder
+                        al historial completo de navegación del estudiante.
+                        Ese dato podría revelar muchos intereses personales.
+                    </p>
+
+                    <h3>
+                        ¿Qué decisión parece más responsable?
+                    </h3>
+
+                    <div class="timer-message"></div>
+
+
+                    <div class="answers">
+
+                        <button class="answer"
+                                data-feedback="Usar IA no justifica automáticamente acceder a cualquier información personal. Cada dato debe evaluarse según necesidad, beneficio y riesgo.">
+                            Aceptar siempre,
+                            porque la aplicación usa IA.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="Una decisión responsable no tiene por qué ser siempre absoluta. Conviene analizar qué dato se solicita, para qué se necesita y qué riesgos implica.">
+                            Rechazar siempre cualquier dato.
+                        </button>
+
+
+                        <button class="answer"
+                                data-correct="true"
+                                data-feedback="Correcto. Antes de compartir información conviene analizar si es necesaria, qué beneficio aporta y cómo será protegida.">
+                            Preguntar si el historial es realmente necesario,
+                            qué beneficio aporta
+                            y cómo se protegerá.
+                        </button>
+
+
+                        <button class="answer"
+                                data-feedback="Que una aplicación tenga un objetivo educativo no elimina automáticamente los riesgos relacionados con privacidad y uso de datos personales.">
+                            Aceptar porque una aplicación educativa
+                            no presenta riesgos.
+                        </button>
+
+                    </div>
+
+
+                    <div class="feedback"></div>
+
+
+                    <button class="continue-btn hidden">
+                        CONTINUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             18 - CIERRE
+        ================================================== -->
+
+        <section class="screen final-screen"
+                 data-screen="18"
+                 data-section="CIERRE">
+
+            <div class="final-layout">
+
+                <div class="final-content">
+
+                    <div class="phase-label">
+                        CIERRE
+                    </div>
+
+                    <h2>
+                        Volvamos a nuestra pregunta
+                    </h2>
+
+                    <p class="final-question">
+                        ¿Cómo influyen los datos en los resultados
+                        de los sistemas de Inteligencia Artificial
+                        que usamos todos los días?
+                    </p>
+
+
+                    <button class="final-reveal-btn">
+                        CONSTRUIR LA RESPUESTA
+                    </button>
+
+
+                    <div class="final-ideas hidden">
+
+                        <div class="final-idea">
+
+                            <strong>
+                                1. LOS DATOS IMPORTAN
+                            </strong>
+
+                            <p>
+                                Si son incompletos o poco representativos,
+                                los resultados pueden ser incorrectos o desiguales.
+                            </p>
+
+                        </div>
+
+
+                        <div class="final-idea">
+
+                            <strong>
+                                2. LOS RESULTADOS TIENEN CONSECUENCIAS
+                            </strong>
+
+                            <p>
+                                Un error de un sistema de IA
+                                puede afectar a personas reales.
+                            </p>
+
+                        </div>
+
+
+                        <div class="final-idea">
+
+                            <strong>
+                                3. LAS DECISIONES HUMANAS IMPORTAN
+                            </strong>
+
+                            <p>
+                                Las personas deciden qué datos utilizar,
+                                cómo diseñar el sistema
+                                y para qué usar sus resultados.
+                            </p>
+
+                        </div>
+
+
+                        <div class="final-summary">
+
+                            La IA no decide en el vacío:
+                            sus resultados dependen de los datos
+                            con los que trabaja
+                            y de las decisiones humanas
+                            sobre su diseño y uso.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="final-character">
+
+                    <img src="img/cierre-homero.png"
+                         alt="">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
