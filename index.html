@@ -29,10 +29,10 @@
           content="Reconocer · Analizar · Decidir">
 
     <meta property="og:image"
-          content="https://TU-SITIO.netlify.app/img/portada-familia.png">
+          content="https://inteligencia-simpson.netlify.app/img/portada-familia.png">
 
     <meta property="og:url"
-          content="https://TU-SITIO.netlify.app/">
+          content="https://inteligencia-simpson.netlify.app/">
 
     <meta name="twitter:card"
           content="summary_large_image">
@@ -44,10 +44,25 @@
           content="Reconocer · Analizar · Decidir">
 
     <meta name="twitter:image"
-          content="https://TU-SITIO.netlify.app/img/portada-familia.png">
+          content="https://inteligencia-simpson.netlify.app/img/portada-familia.png">
 
     <link rel="stylesheet"
           href="style.css">
+
+    <style>
+        .team-identification {
+            margin: 22px 0 18px;
+            padding: 16px;
+            border: 3px solid #222;
+            border-radius: 16px;
+            background: #fff;
+            max-width: 520px;
+        }
+        .team-identification label { display:block; font-weight:800; margin-bottom:8px; }
+        .team-identification input { box-sizing:border-box; width:100%; padding:12px 14px; border:2px solid #222; border-radius:10px; font:inherit; background:#fff; }
+        .team-identification .team-help { margin:8px 0 0; font-size:0.92rem; }
+        .team-error { min-height:1.25em; margin-top:8px; font-weight:700; }
+    </style>
 </head>
 
 
@@ -139,6 +154,14 @@
                         <span>DECIDIR</span>
 
                     </div>
+                    <div class="team-identification">
+                        <label for="teamName">Nombre o número del equipo</label>
+                        <input id="teamName" type="text" maxlength="40" autocomplete="off" placeholder="Ej.: Equipo 3">
+                        <p class="team-help">Grupo: <strong>8.º 1</strong></p>
+                        <div id="teamError" class="team-error" aria-live="polite"></div>
+                    </div>
+
+
 
                     <button class="primary-btn start-btn">
                         COMENZAR
