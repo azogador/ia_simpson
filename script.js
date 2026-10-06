@@ -25,6 +25,52 @@ document.addEventListener("DOMContentLoaded", () => {
         alto3: "MATE42"
     };
 
+    /* =========================================================
+       REGISTRO DE EVALUACIÓN
+    ========================================================== */
+
+    const RECORD_ENDPOINT =
+        "https://script.google.com/macros/s/AKfycbzJEJirlqLF2ssFZLavaQrOOFjxX5DvXVqmzZ-7dj8yX2t2lAJ-Vq4zDcIPhIE4VkjvFQ/exec";
+
+    const GROUP_NAME = "8.º 1";
+    const EVALUATION_KEY = "ia_clase_evaluation_v1";
+
+    const ACTIVITY_MAP = {
+        2:{id:"R1",name:"Recomendaciones de YouTube"},
+        3:{id:"R2",name:"Predicción del teclado"},
+        4:{id:"R3",name:"Enemigo de videojuego"},
+        5:{id:"R4",name:"El ascensor"},
+        7:{id:"A1",name:"Representatividad de los datos"},
+        8:{id:"A2",name:"Causa del error"},
+        9:{id:"A3",name:"Consecuencias del error"},
+        11:{id:"D1",name:"Ubicación en tiempo real"},
+        12:{id:"D2",name:"Lista de contactos"},
+        13:{id:"D3",name:"Beneficio y riesgo"},
+        15:{id:"I1",name:"Integrar: reconocer IA"},
+        16:{id:"I2",name:"Integrar: representatividad"},
+        17:{id:"I3",name:"Integrar: privacidad"}
+    };
+
+    const ERROR_CODE_MAP = {
+        2:[null,"AUT_REGLAS","IA_DUDA_DATOS"],
+        3:[null,"AUT_REGLAS","IA_DUDA_DATOS"],
+        4:["AUT_DECISION",null,"AUT_AUTONOMIA"],
+        5:["AUT_DECISION",null,"AUT_RESPUESTA"],
+        7:["DAT_CANTIDAD",null,"DAT_CALIDAD","DAT_GRUPO"],
+        8:[null,"IA_INEVITABLE","DAT_GRUPO","IA_INTENCION"],
+        9:["CON_TECNICA","CON_TECNICA",null,"CON_TECNICA"],
+        11:["PRI_ACEPTAR","PRI_RECHAZAR",null],
+        12:["PRI_ACEPTAR",null,"PRI_TERCEROS"],
+        13:["PRI_BENEFICIO","PRI_RECHAZAR",null],
+        15:["AUT_RESPUESTA",null,"AUT_AUTONOMIA","IA_CONTEXTO"],
+        16:["DAT_GRUPO",null,"CON_TECNICA","IA_CONTEXTO"],
+        17:["PRI_ACEPTAR","PRI_RECHAZAR",null,"PRI_CONFIANZA"]
+    };
+
+    let screenStartedAt = Date.now();
+    let evaluationState = { team:"", attempts:{}, totalErrors:0, firstAttemptCorrect:0, errorCodes:[], summarySent:false };
+
+
 
     const screens =
         [...document.querySelectorAll(".screen")];
@@ -42,6 +88,80 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentScreen = 1;
 
     let timerInterval = null;
+
+
+
+
+    /* =========================================================
+       ESTADO Y ENVÍO DEL REGISTRO
+    ========================================================== */
+
+    function saveEvaluationState() {
+        try { localStorage.setItem(EVALUATION_KEY, JSON.stringify(evaluationState)); }
+        catch (error) { console.warn("No se pudo guardar el estado de evaluación.", error); }
+    }
+
+    function loadEvaluationState() {
+        try {
+            const raw = localStorage.getItem(EVALUATION_KEY);
+            if (!raw) return;
+            const saved = JSON.parse(raw);
+            evaluationState = { ...evaluationState, ...saved, attempts:saved.attempts||{}, errorCodes:saved.errorCodes||[] };
+        } catch (error) { console.warn("No se pudo recuperar el estado de evaluación.", error); }
+    }
+
+    function cleanText(value) { return String(value||"").replace(/\s+/g," ").trim(); }
+
+    function sendRecord(payload) {
+        if (!RECORD_ENDPOINT) return;
+        fetch(RECORD_ENDPOINT,{
+            method:"POST", mode:"no-cors",
+            headers:{"Content-Type":"text/plain;charset=UTF-8"},
+            body:JSON.stringify(payload), keepalive:true
+        }).catch(error=>console.warn("No se pudo enviar el registro.",error));
+    }
+
+    function registerAnswer(screen, button, isCorrect) {
+        const screenNumber = Number(screen.dataset.screen);
+        const activity = ACTIVITY_MAP[screenNumber];
+        if (!activity || !evaluationState.team) return;
+
+        const buttons = [...screen.querySelectorAll(".answer")];
+        const optionIndex = buttons.indexOf(button);
+        const nextAttempt = (evaluationState.attempts[activity.id]||0)+1;
+        evaluationState.attempts[activity.id] = nextAttempt;
+
+        let errorCode = "";
+        if (isCorrect) {
+            if (nextAttempt === 1) evaluationState.firstAttemptCorrect++;
+        } else {
+            evaluationState.totalErrors++;
+            errorCode = (ERROR_CODE_MAP[screenNumber]||[])[optionIndex] || "ERROR_CONCEPTUAL";
+            evaluationState.errorCodes.push(errorCode);
+        }
+        saveEvaluationState();
+
+        const elapsedSeconds = Math.max(0,Math.round((Date.now()-screenStartedAt)/1000));
+        sendRecord({
+            action:"event", grupo:GROUP_NAME, equipo:evaluationState.team,
+            pantalla:screenNumber, bloque:screen.dataset.section||"",
+            actividad:`${activity.id} - ${activity.name}`,
+            opcion:cleanText(button.textContent), correcta:isCorrect, intento:nextAttempt,
+            codigoError:errorCode, tiempo:elapsedSeconds
+        });
+    }
+
+    function sendFinalSummary() {
+        if (!evaluationState.team || evaluationState.summarySent) return;
+        evaluationState.summarySent = true;
+        saveEvaluationState();
+        sendRecord({
+            action:"complete", grupo:GROUP_NAME, equipo:evaluationState.team,
+            intentos:evaluationState.attempts, primerIntento:evaluationState.firstAttemptCorrect,
+            totalErrores:evaluationState.totalErrors,
+            erroresConceptuales:[...new Set(evaluationState.errorCodes)]
+        });
+    }
 
 
     /* =========================================================
@@ -115,6 +235,12 @@ document.addEventListener("DOMContentLoaded", () => {
             ) {
 
                 currentScreen = number;
+
+        screenStartedAt = Date.now();
+
+        if (number === TOTAL_SCREENS) {
+            sendFinalSummary();
+        }
 
             } else {
 
@@ -438,6 +564,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         "true";
 
 
+                    registerAnswer(screen, button, isCorrect);
+
+
                     /*
                         Limpiamos selección anterior
                     */
@@ -598,14 +727,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (startButton) {
 
+        const teamInput = document.getElementById("teamName");
+        const teamError = document.getElementById("teamError");
 
-        startButton.addEventListener(
-            "click",
-            () => {
+        if (teamInput && evaluationState.team) {
+            teamInput.value = evaluationState.team;
+        }
 
-                showScreen(2);
+        startButton.addEventListener("click", () => {
+            const teamName = cleanText(teamInput ? teamInput.value : "");
+
+            if (!teamName) {
+                if (teamError) teamError.textContent = "Escriban el nombre o número del equipo antes de comenzar.";
+                if (teamInput) teamInput.focus();
+                return;
             }
-        );
+
+            if (teamError) teamError.textContent = "";
+
+            if (evaluationState.team && evaluationState.team !== teamName) {
+                evaluationState = { team:teamName, attempts:{}, totalErrors:0, firstAttemptCorrect:0, errorCodes:[], summarySent:false };
+            } else {
+                evaluationState.team = teamName;
+            }
+
+            saveEvaluationState();
+            showScreen(2);
+        });
     }
 
 
@@ -1085,6 +1233,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             STORAGE_KEY
                         );
 
+                        localStorage.removeItem(EVALUATION_KEY);
+
                     } catch (error) {
 
                         console.warn(
@@ -1104,7 +1254,13 @@ document.addEventListener("DOMContentLoaded", () => {
        INICIALIZACIÓN
     ========================================================== */
 
+    loadEvaluationState();
+
     loadProgress();
+
+    if (currentScreen > 1 && !evaluationState.team) {
+        currentScreen = 1;
+    }
 
     showScreen(
         currentScreen
